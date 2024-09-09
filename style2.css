@@ -1,0 +1,28 @@
+body {
+    font-family: monospace;
+    font-size:15px;
+    line-height: 1.6;
+    color: #2605f7;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #a600df;
+}
+.cat-breed {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.cat-breed img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.cat-breed h2 {
+    color: #00df88;
+}

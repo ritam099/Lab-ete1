@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Breeds</title>
+    <link rel="stylesheet" href="style2.css">
+    
+    
+</head>
+<body>
+    <h1>Cat Breeds</h1>
+    <div id="cat-breeds-container"></div>
+
+    <script>
+        
+        const jsonUrl = "https://raw.githubusercontent.com/ritam099/ete1-json/main/cat-bredds.json"; // here i have taken the raw hitgub link that i received after i uploaded the json data on the ete-json repo 
+
+        fetch(jsonUrl)
+            .then(response => response.json())                                                    //fetched the data fromm the above url which is providing the data given in the question
+            .then(data => {
+                const container = document.getElementById('cat-breeds-container');
+                data.forEach(cat => {
+                    const catElement = document.createElement('div');
+                    catElement.className = 'cat-breed';
+                    catElement.innerHTML = `
+                        <h2>${cat.name}</h2>
+                        <img src="${cat.url}" alt="${cat.name}">
+                        <p><strong>Origin:</strong> ${cat.origin}</p>
+                        <p><strong>Temperament:</strong> ${cat.temperament}</p>       
+                        <p><strong>Life Span:</strong> ${cat.life_span} years</p>
+                        <p>${cat.description}</p>
+                    `;
+                    container.appendChild(catElement);
+                });
+            })
+            .catch(error => console.error('Error fetching cat breeds:', error));           //thsi is teh error handling part that i have created so that any errro would be catched if occurs
+    </script>
+</body>
+</html>
